@@ -1,13 +1,18 @@
-import { NumberSystem, MathOperation, MathExpression, CalculateFunction } from './types'; 
+import {
+    MathOperation,
+    MathExpression,
+    NumberMathFunction,
+    CalculateFunction
+} from './types';
 import { convertToDecimal, convertFromDecimal } from './converter';
 
-const operations: Record<MathOperation, (x: number, y: number) => number> = {
-    add: (x, y) => x + y,
-    subtract: (x, y) => x - y,
-    multiply: (x, y) => x * y,
-    divide: (x, y) => {
-        if (y === 0) throw new Error("Division by zero");
-        return x / y;
+const operations: Record<MathOperation, NumberMathFunction> = {
+    add: (a, b) => a + b,
+    subtract: (a, b) => a - b,
+    multiply: (a, b) => a * b,
+    divide: (a, b) => {
+        if (b === 0) throw new Error("Division by zero");
+        return a / b;
     },
 };
 

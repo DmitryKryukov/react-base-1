@@ -1,15 +1,26 @@
-type NumberSystem = 'decimal' | 'binary' | 'hexadecimal';
+type MathBase = "bin" | "oct" | "dec" | "hex";
 
-function getSystemFromName(base: NumberSystem): number {
-    return base === 'binary' ? 2 : base === 'hexadecimal' ? 16 : 10
+const mathBases: Record<MathBase, number> = {
+    bin: 2,
+    oct: 8,
+    dec: 10,
+    hex: 16,
+};
+
+
+function getSystemFromName(base: MathBase): number {
+    if (!(base in mathBases)) {
+        throw new Error("invalid base");
+    }
+    return mathBases[base];
 }
 
-function convertToDecimal(value: string, base: NumberSystem): number {
-    return parseInt(value,getSystemFromName(base))
+function convertToDecimal(value: string, base: MathBase): number {
+    return parseInt(value, getSystemFromName(base))
 }
 
-function convertFromDecimal(result: number, base: NumberSystem): string {
+function convertFromDecimal(result: number, base: MathBase): string {
     return result.toString(getSystemFromName(base));
 }
 
-export { NumberSystem, convertToDecimal, convertFromDecimal };
+export { MathBase, convertToDecimal, convertFromDecimal };

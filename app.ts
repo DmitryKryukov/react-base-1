@@ -7,18 +7,18 @@ const bBinary = '0101';
 const aHex = 'A';
 const bHex = '5';
 
-console.log("Decimal Addition: ", add(aDecimal, bDecimal, 'decimal'));
-console.log("Binary Addition: ", add(aBinary, bBinary, 'binary'));
-console.log("Hexadecimal Addition: ", add(aHex, bHex, 'hexadecimal'));
+console.log("Decimal Addition: ", add(aDecimal, bDecimal, 'dec'));
+console.log("Binary Addition: ", add(aBinary, bBinary, 'bin'));
+console.log("Hexadecimal Addition: ", add(aHex, bHex, 'hex'));
 
-console.log("Decimal Subtraction: ", subtract(aDecimal, bDecimal, 'decimal'));
-console.log("Binary Subtraction: ", subtract(aBinary, bBinary, 'binary'));
-console.log("Hexadecimal Subtraction: ", subtract(aHex, bHex, 'hexadecimal'));
+console.log("Decimal Subtraction: ", subtract(aDecimal, bDecimal, 'dec'));
+console.log("Binary Subtraction: ", subtract(aBinary, bBinary, 'bin'));
+console.log("Hexadecimal Subtraction: ", subtract(aHex, bHex, 'hex'));
 
-console.log("Decimal Multiplication: ", multiply(aDecimal, bDecimal, 'decimal'));
-console.log("Binary Multiplication: ", multiply(aBinary, bBinary, 'binary'));
-console.log("Hexadecimal Multiplication: ", multiply(aHex, bHex, 'hexadecimal'));
+console.log("Decimal Multiplication: ", multiply(aDecimal, bDecimal, 'dec'));
+console.log("Binary Multiplication: ", multiply(aBinary, bBinary, 'bin'));
+console.log("Hexadecimal Multiplication: ", multiply(aHex, bHex, 'hex'));
 
-console.log("Decimal Division: ", divide(aDecimal, bDecimal, 'decimal'));
-console.log("Binary Division: ", divide(aBinary, bBinary, 'binary'));
-console.log("Hexadecimal Division: ", divide(aHex, bHex, 'hexadecimal'));
+console.log("Decimal Division: ", divide(aDecimal, bDecimal, 'dec'));
+console.log("Binary Division: ", divide(aBinary, bBinary, 'bin'));
+console.log("Hexadecimal Division: ", divide(aHex, bHex, 'hex'));

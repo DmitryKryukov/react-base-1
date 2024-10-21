@@ -7,7 +7,6 @@ const mathBases: Record<MathBase, number> = {
     hex: 16,
 };
 
-
 function getSystemFromName(base: MathBase): number {
     if (!(base in mathBases)) {
         throw new Error("invalid base");

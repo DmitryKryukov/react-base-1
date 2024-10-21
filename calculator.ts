@@ -1,11 +1,7 @@
-import {
-    MathOperation,
-    MathExpression,
-    NumberMathFunction,
-    CalculateFunction
-} from './types';
-import { convertToDecimal, convertFromDecimal } from './converter';
+import { NumberSystem, convertToDecimal, convertFromDecimal } from './converter';
 
+type MathOperation = 'add' | 'subtract' | 'multiply' | 'divide';
+type NumberMathFunction = (a: number, b: number) => number;
 const operations: Record<MathOperation, NumberMathFunction> = {
     add: (a, b) => a + b,
     subtract: (a, b) => a - b,
@@ -16,6 +12,7 @@ const operations: Record<MathOperation, NumberMathFunction> = {
     },
 };
 
+type CalculateFunction = (a: string, b: string, base: NumberSystem, operation: MathOperation) => string;
 const calculate: CalculateFunction = (a, b, base, operation) => {
     const decimalA = convertToDecimal(a, base);
     const decimalB = convertToDecimal(b, base);
@@ -23,6 +20,7 @@ const calculate: CalculateFunction = (a, b, base, operation) => {
     return convertFromDecimal(result, base);
 }
 
+type MathExpression = (a: string, b: string, base: NumberSystem) => string;
 const add: MathExpression = (a, b, base) => calculate(a, b, base, 'add');
 const subtract: MathExpression = (a, b, base) => calculate(a, b, base, 'subtract');
 const multiply: MathExpression = (a, b, base) => calculate(a, b, base, 'multiply');

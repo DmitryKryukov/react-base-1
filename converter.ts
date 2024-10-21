@@ -1,4 +1,4 @@
-import { NumberSystem } from './types'; 
+type NumberSystem = 'decimal' | 'binary' | 'hexadecimal';
 
 function getSystemFromName(base: NumberSystem): number {
     return base === 'binary' ? 2 : base === 'hexadecimal' ? 16 : 10
@@ -12,4 +12,4 @@ function convertFromDecimal(result: number, base: NumberSystem): string {
     return result.toString(getSystemFromName(base));
 }
 
-export { convertToDecimal, convertFromDecimal };
+export { NumberSystem, convertToDecimal, convertFromDecimal };

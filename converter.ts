@@ -9,7 +9,7 @@ const mathBases: Record<MathBase, number> = {
 
 function getSystemFromName(base: MathBase): number {
     if (!(base in mathBases)) {
-        throw new Error("invalid base");
+        throw new Error("Invalid base");
     }
     return mathBases[base];
 }
